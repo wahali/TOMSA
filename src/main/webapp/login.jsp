@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-
 <!doctype html>
 <html  lang="en">
 
@@ -52,7 +51,23 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script language="JavaScript">
+        function check() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            username = String(username);
+            password = String(password);
+            var val =  $('input:radio:checked').val();
+            if (username ==="") {
+                alert("username不能为空");
+            } else if (password==="") {
+                alert("password不能为空");
+            }
+            else {
+                $('#myform1').submit();
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -71,14 +86,14 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="signin-form">
-                            <form action="signin.html">
+                            <form id = "myform1" action="CheckUser.do" method = post <%--onsubmit="check()"--%>>
                                 <div class="form-group">
-                                    <label for="signin_form">usrnme</label>
-                                    <input type="text" class="form-control" id="signin_form" placeholder="enter your username here">
+                                    <label for="username">usrname</label>
+                                    <input type="text" class="form-control" name = "username"id="username" placeholder="enter your username here">
                                 </div><!--/.form-group -->
                                 <div class="form-group">
-                                    <label for="signin_form">password</label>
-                                    <input type="password" class="form-control" id="signin_form" placeholder="Password">
+                                    <label for="password">password</label>
+                                    <input type="password" class="form-control" name = "password" id="password" placeholder="Password">
                                 </div><!--/.form-group -->
                             </form><!--/form -->
                         </div><!--/.signin-form -->
@@ -102,10 +117,23 @@
                                         <label for="styled-checkbox-student">student</label>
                                         <input class="styled-checkbox" id="styled-checkbox-teacher" type="checkbox" name = "role" value="value_role" >
                                         <label for="styled-checkbox-teacher">teacher</label>-->
-                                        <input type="radio" name="role" id = "radio_student">
-                                        <label for="radio_student">student</label>
-                                        <input type="radio" name="role" id = "radio_teacher">
-                                        <label for="radio_teacher">teacher</label>
+                                        <%--<div class="btn-group" data-toggle="buttons">
+                                            <label  &lt;%&ndash;class="btn btn-info"&ndash;%&gt; class="radio-inline">
+                                                <input  type="radio" name="role" id = "student" value="student" checked > student
+                                            </label>
+                                            <label  &lt;%&ndash;class="btn btn-info"&ndash;%&gt; class="radio-inline">
+                                                <input  type="radio" name="role" id = "teacher" value="teacher"> teacher
+                                            </label>
+                                            <label  &lt;%&ndash;class="btn btn-info"&ndash;%&gt; class="radio-inline">
+                                                <input  type="radio" name="role" id = "admin" value="admin"> admin
+                                            </label>
+                                        </div>--%>
+<%--                                        <input type="radio" name="role" id = "radio_student">--%>
+<%--                                        <label for="radio_student">student</label>--%>
+<%--                                        <input type="radio" name="role" id = "radio_teacher">--%>
+<%--                                        <label for="radio_teacher">teacher</label>--%>
+<%--                                        <input type="radio" name="role" id = "radio_admin">--%>
+<%--                                        <label for="radio_admin">admin</label>--%>
                                     </li>
 
                                 </ul>
@@ -117,12 +145,12 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="signin-footer">
-                            <button type="button" class="btn signin_btn">
+                            <button type="button" <%--form = "myform1"--%> class="btn signin_btn"  onclick="check()">
                                 sign in
                             </button>
                             <p>
                                 Don’t have an Account ?
-                                <a href="popupsignup.html">register</a>
+                                <a href="${pageContext.request.contextPath}StudentRegist.jsp">register</a>
                             </p>
                         </div><!--/.signin-footer -->
                     </div><!--/.col-->
@@ -136,12 +164,12 @@
 <!-- signin end -->
 
 <!--footer copyright start -->
-<footer class="footer-copyright">
-    <div id="scroll-Top">
-        <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
-    </div><!--/.scroll-Top-->
+<%--<footer class="footer-copyright">--%>
+<%--    <div id="scroll-Top">--%>
+<%--        <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>--%>
+<%--    </div><!--/.scroll-Top-->--%>
 
-</footer><!--/.hm-footer-copyright-->
+<%--</footer><!--/.hm-footer-copyright-->--%>
 <!--footer copyright  end -->
 
 
@@ -159,7 +187,7 @@
 <script src="js/bootsnav.js"></script>
 
 <!-- jquery.sticky.js -->
-<script src="js/jquery.sticky.js"></script>
+<script src="${pageContext.request.contextPath}resources/static/js/jquery.sticky.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
 
@@ -168,4 +196,5 @@
 
 </body>
 
-</html></html>
+
+</html>

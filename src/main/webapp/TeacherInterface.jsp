@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>老师页面</title>
 </head>
 <body>
-
+这里是老师页面；
 </body>
 </html>

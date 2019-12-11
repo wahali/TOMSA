@@ -7,7 +7,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public interface Dao {
+public interface Dao{
     //查找并返回数据源对象
     public static DataSource getDataSource() {
         DataSource dataSource = null;
