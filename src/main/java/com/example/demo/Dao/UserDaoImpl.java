@@ -1,19 +1,15 @@
 package com.example.demo.Dao;
 
 import com.example.demo.bean.User;
-import org.junit.runner.RunWith;
+import com.example.demo.bean.UserrowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
 @Repository
 
 public class UserDaoImpl implements UserDao {
@@ -52,7 +48,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findByUsername(String uname)throws  EmptyResultDataAccessException{
         try{
-            User user = jdbcTemplate.queryForObject("SELECT * FROM user WHERE uname=?", new Object[]{uname}, new BeanPropertyRowMapper<User>(User.class));
+            User user = jdbcTemplate.queryForObject("SELECT * FROM user WHERE uname=?", new Object[]{uname}, new UserrowMapper());
             return user;
         }catch (EmptyResultDataAccessException e){
             return null;
@@ -61,7 +57,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findById(int uid)
     {
-        return jdbcTemplate.queryForObject("SELECT * FROM user WHERE uid=?", new Object[]{uid}, new BeanPropertyRowMapper<User>(User.class));
+        return jdbcTemplate.queryForObject("SELECT * FROM user WHERE uid=?", new Object[]{uid}, new UserrowMapper());
     }
 
 }

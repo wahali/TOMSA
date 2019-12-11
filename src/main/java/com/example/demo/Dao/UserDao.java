@@ -3,6 +3,7 @@ package com.example.demo.Dao;
 import com.example.demo.bean.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface UserDao extends Dao {
     //添加user的方法
