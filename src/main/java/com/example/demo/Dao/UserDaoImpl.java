@@ -13,10 +13,16 @@ import java.util.List;
 @Repository
 
 public class UserDaoImpl implements UserDao {
+    public UserDaoImpl(){}
     @Autowired
     JdbcTemplate jdbcTemplate;
     public boolean addUser(User user) throws DaoException {
-        String sql = "insert into user()";
+        String sql = "insert into user(uid,uname,upassword) values(0,?,?);";
+        try{
+            jdbcTemplate.update(sql,user.getUname(),user.getUpassword());
+        }catch (EmptyResultDataAccessException e) {
+            return false;
+        }
         return true;
     }
     public boolean find_user(User user)throws DaoException{

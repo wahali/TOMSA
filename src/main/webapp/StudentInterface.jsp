@@ -1,5 +1,5 @@
 <%--
-  Created by IntelliJ IDEA.
+  Created by IntelliJ IDEA.+
   User: 小飞侠666
   Date: 2019/12/4
   Time: 15:21
@@ -11,6 +11,23 @@
     <title>学生页面</title>
 </head>
 <body>
+<p>
 这边是学生页面；
+</p>
+<p>
+<a href="CourseMessageBoard.jsp">查看所有课程及留言信息
+</a>
+</p>
+<p><a href="StudentInfo.do">查看及修改个人信息 </a>
+</p>
+<p>
+    <a href="StudentQuestion">查看自己的留言</a>
+</p>
+<p>
+    <a href="AskQuestion.jsp">提出问题</a>
+</p>
+
+
+
 </body>
 </html>

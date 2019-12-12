@@ -59,6 +59,14 @@
                     });
         }
     </script>
+    <script>
+        function check(){
+            if(document.getElementById("password1").value!==document.getElementById("password2").value)alert("两次密码不一致");
+            else if(document.getElementById("username")==="")alert("用户名不能为空!");
+            else if(document.getElementById("realname")==="")alert("真实姓名不能为空!");
+            else $('#ADD').submit();
+        }
+    </script>
 
 </head>
 
@@ -78,11 +86,11 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="signin-form">
-                            <form action="signin.html">
-                                <div class="form-col">
+                            <form action="AddUser.do" id = "ADD" method="post">
+                                <%--<div class="form-col">
                                     <div class="form-group">
-                                        <label for="signin_form">real name</label>
-                                        <input type="text" class="form-control" id="signin_form" placeholder="real name">
+                                        <label for="realName">real name</label>
+                                        <input type="text" class="form-control" id="realName" placeholder="real name">
                                     </div><!--/.form-group -->
                                 </div><!--/.form-col -->
                                 <div class="form-col1">
@@ -90,7 +98,7 @@
                                         <label for="signin_form">class number</label>
                                         <input type="text" class="form-control" id="signin_form" placeholder="class number">
                                     </div><!--/.form-group -->
-                                </div><!--/.form-col1 -->
+                                </div><!--/.form-col1 -->--%>
                                 <br>
                                 <div class="form-group">
                                     <label for="username">Username</label>
@@ -101,12 +109,12 @@
                                 </div>&lt;%&ndash;ajax确认username的提示信息&ndash;%&gt;--%>
                                 <div class="form-group">
                                     <br>
-                                    <label for="password">password</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                    <label for="password1">password</label>
+                                    <input type="password" class="form-control" name = "password1" id="password1" placeholder="Password">
                                 </div><!--/.form-group -->
                                 <div class="form-group">
-                                    <label for="signin_form">retype password</label>
-                                    <input type="password" class="form-control" id="signin_form" placeholder="Retype Password">
+                                    <label for="password2">retype password</label>
+                                    <input type="password" class="form-control" name ="password1" id="password2" placeholder="Retype Password" >
                                 </div><!--/.form-group -->
                             </form><!--/form -->
                         </div><!--/.signin-form -->
@@ -136,7 +144,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="signin-footer">
-                            <button type="button" class="btn signin_btn" name = "signup">
+                            <button type="button" class="btn signin_btn" name = "signup" onclick = "check()">
                                 sign up
                             </button>
                             <p>

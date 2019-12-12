@@ -11,6 +11,21 @@
     <title>老师页面</title>
 </head>
 <body>
-这里是老师页面；
+<p>
+    这边是教师页面；
+</p>
+<p>
+    <a href="" name = "CourseMessageBoard.jsp">查看所有课程及留言信息
+    </a>
+</p>
+<p><a href="" name = "TeacherInfo.jsp">查看及修改个人信息</a>
+</p>
+<p>
+    <a href=""name="TeacherResponse.jsp">查看教师自己的回答</a>
+</p>
+<p>
+    <a href=""name="">增删可访问课程的学生</a>
+</p>
+显示教授课程的课程列表
 </body>
 </html>
