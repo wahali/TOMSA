@@ -15,16 +15,16 @@
 这边是学生页面；
 </p>
 <p>
-<a href="CourseMessageBoard.jsp">查看所有课程及留言信息
+<a href="CourseMessageBoard.do">查看所有课程及留言信息
 </a>
 </p>
 <p><a href="StudentInfo.do">查看及修改个人信息 </a>
 </p>
 <p>
-    <a href="StudentQuestion">查看自己的留言</a>
+    <a href="StudentQuestion.jsp">查看自己的留言</a>
 </p>
 <p>
-    <a href="AskQuestion.jsp">提出问题</a>
+    <a href="AskQuestion.do">提出问题</a>
 </p>
 
 

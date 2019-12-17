@@ -18,7 +18,7 @@
     <a href="" name = "CourseMessageBoard.jsp">查看所有课程及留言信息
     </a>
 </p>
-<p><a href="" name = "TeacherInfo.jsp">查看及修改个人信息</a>
+<p><a href="" name = "TeacherInfo.do">查看及修改个人信息</a>
 </p>
 <p>
     <a href=""name="TeacherResponse.jsp">查看教师自己的回答</a>
