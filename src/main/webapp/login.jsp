@@ -52,6 +52,10 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script language="JavaScript">
+        function cc() {
+            if(${requestScope.message!=null})alert('${requestScope.message}');
+        }
+
         function check() {
             let username = document.getElementById("username").value;
             let password = document.getElementById("password").value;
@@ -70,7 +74,7 @@
     </script>
 </head>
 
-<body>
+<body onload="cc()">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
@@ -178,7 +182,7 @@
 <script src="js/jquery.js"></script>
 
 <!--modernizr.min.js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>--%>
 
 <!--bootstrap.min.js-->
 <script src="js/bootstrap.min.js"></script>
@@ -188,7 +192,7 @@
 
 <!-- jquery.sticky.js -->
 <script src="${pageContext.request.contextPath}resources/static/js/jquery.sticky.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<%--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--%>
 
 
 <!--Custom JS-->

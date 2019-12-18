@@ -40,6 +40,6 @@ public class UserDaoImpl implements UserDao {
         return jdbcTemplate.queryForObject("SELECT * FROM user WHERE uid=?", new Object[]{uid}, new UserrowMapper());
     }
     public void UpdateById(int uid,User user){
-        jdbcTemplate.update("update user set uname=? and upassword = ? where uid = ?",new Object[]{user.getUname(),user.getUpassword(),uid});
+        jdbcTemplate.update("update user set /*uname=? and*/ upassword = ? where uid = ?",new Object[]{/*user.getUname(),*/user.getUpassword(),uid});
     }
 }

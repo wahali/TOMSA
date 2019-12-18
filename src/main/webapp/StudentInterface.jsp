@@ -21,10 +21,10 @@
 <p><a href="StudentInfo.do">查看及修改个人信息 </a>
 </p>
 <p>
-    <a href="StudentQuestion.jsp">查看自己的留言</a>
+    <a href="GetOwnQuestion.do">查看自己的留言</a>
 </p>
 <p>
-    <a href="AskQuestion.do">提出问题</a>
+    <a href="AskQuestion.do">发起留言或进行回复</a>
 </p>
 
 

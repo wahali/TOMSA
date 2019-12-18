@@ -13,19 +13,21 @@
 <body>
 <p>
     这边是教师页面；
+
 </p>
+<jsp:include page="ShowCourse.jsp" flush ="true"></jsp:include>
 <p>
-    <a href="" name = "CourseMessageBoard.jsp">查看所有课程及留言信息
+    <a href="CourseMessageBoard.jsp">查看所有课程及留言信息
     </a>
 </p>
-<p><a href="" name = "TeacherInfo.do">查看及修改个人信息</a>
+<p><a href="ShowTeacherCourse.do">查看及修改个人信息</a>
 </p>
 <p>
-    <a href=""name="TeacherResponse.jsp">查看教师自己的回答</a>
+    <a href="TeacherResponse.jsp">查看教师自己的回答</a>
 </p>
 <p>
-    <a href=""name="">增删可访问课程的学生</a>
+    <a href="">增删可访问课程的学生</a>
 </p>
-显示教授课程的课程列表
+
 </body>
 </html>
